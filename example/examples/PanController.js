@@ -40,7 +40,7 @@ class PanController extends React.Component {
     onReleaseY: PropTypes.func,
     onRelease: PropTypes.func,
 
-    //...PanResponderPropTypes,
+    // ...PanResponderPropTypes,
   };
 
   // getInitialState() {
@@ -57,7 +57,9 @@ class PanController extends React.Component {
   // },
 
   _responder = null;
+
   _listener = null;
+
   _direction = null;
 
   constructor(props) {
@@ -80,7 +82,7 @@ class PanController extends React.Component {
         if (this.props.onPanResponderGrant) {
           this.props.onPanResponderGrant(...args);
         }
-        let { panX, panY, horizontal, vertical, xMode, yMode } = this.props;
+        const { panX, panY, horizontal, vertical, xMode, yMode } = this.props;
 
         this.handleResponderGrant(panX, xMode);
         this.handleResponderGrant(panY, yMode);
@@ -90,7 +92,7 @@ class PanController extends React.Component {
       },
 
       onPanResponderMove: (_, { dx, dy, x0, y0 }) => {
-        let {
+        const {
           panX,
           panY,
           xBounds,
@@ -121,20 +123,20 @@ class PanController extends React.Component {
         }
 
         if (horizontal && (!lockDirection || dir === 'x')) {
-          let [xMin, xMax] = xBounds;
+          const [xMin, xMax] = xBounds;
 
           this.handleResponderMove(panX, dx, xMin, xMax, overshootX);
         }
 
         if (vertical && (!lockDirection || dir === 'y')) {
-          let [yMin, yMax] = yBounds;
+          const [yMin, yMax] = yBounds;
 
           this.handleResponderMove(panY, dy, yMin, yMax, overshootY);
         }
       },
 
       onPanResponderRelease: (_, { vx, vy, dx, dy }) => {
-        let {
+        const {
           panX,
           panY,
           xBounds,
@@ -159,7 +161,7 @@ class PanController extends React.Component {
         }
 
         if (!cancel && horizontal && (!lockDirection || dir === 'x')) {
-          let [xMin, xMax] = xBounds;
+          const [xMin, xMax] = xBounds;
           if (this.props.onReleaseX) {
             cancel = this.props.onReleaseX({ vx, vy, dx, dy }) === false;
           }
@@ -176,7 +178,7 @@ class PanController extends React.Component {
         }
 
         if (!cancel && vertical && (!lockDirection || dir === 'y')) {
-          let [yMin, yMax] = yBounds;
+          const [yMin, yMax] = yBounds;
           if (this.props.onReleaseY) {
             cancel = this.props.onReleaseY({ vx, vy, dx, dy }) === false;
           }
@@ -221,7 +223,7 @@ class PanController extends React.Component {
           break;
       }
     }
-    val = val - anim._offset;
+    val -= anim._offset;
     anim.setValue(val);
   }
 

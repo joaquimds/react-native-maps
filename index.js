@@ -23,8 +23,8 @@ export { default as Geojson } from './lib/components/Geojson.js';
 export { Marker, Overlay };
 export { Animated, MAP_TYPES, ProviderPropType };
 
-export const PROVIDER_GOOGLE = MapView.PROVIDER_GOOGLE;
-export const PROVIDER_DEFAULT = MapView.PROVIDER_DEFAULT;
+export const { PROVIDER_GOOGLE } = MapView;
+export const { PROVIDER_DEFAULT } = MapView;
 
 export const MarkerAnimated = Marker.Animated;
 export const OverlayAnimated = Overlay.Animated;

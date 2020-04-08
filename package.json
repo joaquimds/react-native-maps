@@ -1,9 +1,9 @@
 {
-  "name": "react-native-maps",
+  "name": "@joaquimds/react-native-maps",
   "description": "React Native Mapview component for iOS + Android",
   "main": "index.js",
   "author": "Leland Richardson <leland.m.richardson@gmail.com>",
-  "version": "0.27.1",
+  "version": "0.27.2",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "run:packager": "./node_modules/react-native/scripts/packager.sh",
@@ -43,6 +43,8 @@
     "babel-eslint": "^10.0.1",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prefer-object-spread": "^1.2.1",

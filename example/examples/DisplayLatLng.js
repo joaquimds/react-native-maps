@@ -60,7 +60,7 @@ class DisplayLatLng extends React.Component {
   }
 
   randomCoordinate() {
-    const region = this.state.region;
+    const { region } = this.state;
     return {
       latitude:
         region.latitude + (Math.random() - 0.5) * (region.latitudeDelta / 2),
